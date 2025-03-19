@@ -15,7 +15,7 @@ const Floatingshape = ({color, size, top, delay,left}) => {
             rotate: [0, 360]
         }}
 
-        transition={{
+        transition = {{
             duration: 20,
             ease: "linear",
             repeat: Infinity,

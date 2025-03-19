@@ -8,6 +8,7 @@ const router = express.Router();
 
 
 router.get("/check-auth",verifyToken, checkAuth);
+// router.get("/update-profile",verifyToken, upDateProfile);
          
 router.post('/signup', signup)
 

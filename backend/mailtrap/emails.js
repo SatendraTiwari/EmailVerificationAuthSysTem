@@ -14,7 +14,7 @@ export const sendVerificationEmail = async (email, verificationToken) => {
             category: "Email Verification"
         })
 
-        console.log("Email sent successfully ",response)
+        console.log("Email sent successfully ",verificationToken)
     } catch (error) {
         console.error(`error sending verification `, error)
 
@@ -32,7 +32,7 @@ export const sendWelcomeEmail = async (email, name) => {
             to: reciplent,
             template_uuid: "721ded57-83f7-46ac-897e-4fc8a35bf670",
             template_variables: {
-                company_info_name: "CodHub.ai",
+                company_info_name: "CodHub.io",
                 name: name,
             }
         });

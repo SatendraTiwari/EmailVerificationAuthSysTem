@@ -3,7 +3,8 @@ import { connectDB } from './db/connectDB.js';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.route.js'
 import cookieParser from 'cookie-parser';
-
+import cors from "cors";
+import path from 'path';
 
 // configrstion of database
 
@@ -14,6 +15,19 @@ dotenv.config();
 
 const app = express()
 const PORT = process.env.PORT || 8000 ;
+
+
+app.use(cors({origin: "http://localhost:5173",credentials: true}));
+
+
+const _dirname = path.resolve();
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(_dirname, "frontend/dist")));
+    app.get("*",(req,res) => {
+        res.sendFile(path.resolve(_dirname,"fronted","dist","index.html"))
+    })
+}
 
 // express json parse 
 

@@ -71,10 +71,7 @@ const verifyEmail  = async (req, res) => {
             verificationToken: code,
             verificationTokenExpireAt: {$gt: Date.now()}
         })
-
-
-        console.log("user::::::::::::::::1",user)
-
+        
         if(!user){
             return res.status(400).json({ success: false, message: "Invalid verification token"})
         }
@@ -274,6 +271,18 @@ const checkAuth = async (req, res) => {
     }
 }
 
+
+// const updateProfile = async (req,res) => {
+//     try {
+//         const token = req.params();
+//         const {} = req.body();
+//     } catch (error) {
+//         res.status(400).json({
+//             success: false,
+//             message: error.message
+//         })
+//     }
+// }
 
 export {
     signup,
