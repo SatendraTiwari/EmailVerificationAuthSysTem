@@ -14,7 +14,7 @@ const signup = async (req, res) => {
     try {
         
         if(!email || !password || !name ){
-            throw new Error("All dields are required")
+            throw new Error("All fields are required")
         }
         
         // const userAlreadyUser = await User.findOne({email});
